@@ -1,35 +1,34 @@
+Started by user balsem ben hamed
 
-#!/bin/bash
-echo "***************** Starting CI CD Pipeline Tasks *****************"
-
-echo "**"
-echo ".... Build Phase Started :: Compiling Source Code :: ........"
-cd java-web-code
-mvn install
-
-echo "**"
-echo "..... Test Phase Started :: Testing via Automated Scripts :: ........"
-cd ../integration-testing/
-mvn clean verify -P integration-test
-
-
-#!/bin/bash
-echo "................... Integration Phase Started :: Copying Artifacts .................."
-cd java_web_code/
-/bin/cp target/war/1.0/spring-boot-sample-1.0.0.war ../docker/
-echo "................... Provisioning Phase Started :: Building Docker Container .................."
-cd ../docker/
-
-sudo docker build -t devops_pipeline_demo .
-
-
-
-CONTAINER=devops_pipeline_demo
-RUNNING=$(sudo docker inspect -format="{{.State.Running }}" $CONTAINER 2> /dev/null)
-if [ $? -eq 1 ]; then
-echo "'$CONTAINER' does not exist."
-else
-sudo docker rm -f $CONTAINER
-echo "..."
-echo ".....Deployment Phase Started :: Building Docker Container ::....."
-sudo docker run -d -p 8180:8080 -name devops_pipeline_demo devops_pipeline_demo
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/job 1
+The recommended git tool is: NONE
+using credential 288dd42f-d67e-43c7-9a3b-0f84a1b99c0e
+Cloning the remote Git repository
+Cloning repository https://github.com/tekup2021/java_project_for_demo.git
+ > /usr/bin/git init /var/lib/jenkins/workspace/job 1 # timeout=10
+Fetching upstream changes from https://github.com/tekup2021/java_project_for_demo.git
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+using GIT_ASKPASS to set credentials github access
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/tekup2021/java_project_for_demo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git config remote.origin.url https://github.com/tekup2021/java_project_for_demo.git # timeout=10
+ > /usr/bin/git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > /usr/bin/git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 6798aaaf2556ca0a58ca50982b831d7935d97ef4 (refs/remotes/origin/master)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f 6798aaaf2556ca0a58ca50982b831d7935d97ef4 # timeout=10
+Commit message: "Update README.adoc"
+First time build. Skipping changelog.
+[job 1] $ /bin/sh -xe /tmp/jenkins15612863796643189291.sh
++ echo ***************** Starting CI CD Pipeline Tasks *****************
+***************** Starting CI CD Pipeline Tasks *****************
++ echo **
+**
++ echo .... Build Phase Started :: Compiling Source Code :: ........
+.... Build Phase Started :: Compiling Source Code :: ........
++ cd java-web-code
+/tmp/jenkins15612863796643189291.sh: 7: cd: can't cd to java-web-code
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
