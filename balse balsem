@@ -1,34 +1,168 @@
 Started by user balsem ben hamed
-
 Running as SYSTEM
 Building in workspace /var/lib/jenkins/workspace/job 1
 The recommended git tool is: NONE
 using credential 288dd42f-d67e-43c7-9a3b-0f84a1b99c0e
-Cloning the remote Git repository
-Cloning repository https://github.com/tekup2021/java_project_for_demo.git
- > /usr/bin/git init /var/lib/jenkins/workspace/job 1 # timeout=10
-Fetching upstream changes from https://github.com/tekup2021/java_project_for_demo.git
+ > /usr/bin/git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/job 1/.git # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://github.com/samarpit1111/devops_pipeline_demo # timeout=10
+Fetching upstream changes from https://github.com/samarpit1111/devops_pipeline_demo
  > /usr/bin/git --version # timeout=10
  > git --version # 'git version 2.43.0'
 using GIT_ASKPASS to set credentials github access
- > /usr/bin/git fetch --tags --force --progress -- https://github.com/tekup2021/java_project_for_demo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
- > /usr/bin/git config remote.origin.url https://github.com/tekup2021/java_project_for_demo.git # timeout=10
- > /usr/bin/git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
-Avoid second fetch
- > /usr/bin/git rev-parse refs/remotes/origin/master^{commit} # timeout=10
-Checking out Revision 6798aaaf2556ca0a58ca50982b831d7935d97ef4 (refs/remotes/origin/master)
- > /usr/bin/git config core.sparsecheckout # timeout=10
- > /usr/bin/git checkout -f 6798aaaf2556ca0a58ca50982b831d7935d97ef4 # timeout=10
-Commit message: "Update README.adoc"
-First time build. Skipping changelog.
-[job 1] $ /bin/sh -xe /tmp/jenkins15612863796643189291.sh
-+ echo ***************** Starting CI CD Pipeline Tasks *****************
-***************** Starting CI CD Pipeline Tasks *****************
-+ echo **
-**
-+ echo .... Build Phase Started :: Compiling Source Code :: ........
-.... Build Phase Started :: Compiling Source Code :: ........
-+ cd java-web-code
-/tmp/jenkins15612863796643189291.sh: 7: cd: can't cd to java-web-code
-Build step 'Execute shell' marked build as failure
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/samarpit1111/devops_pipeline_demo +refs/heads/*:refs/remotes/origin/* # timeout=10
+ERROR: Error fetching remote repo 'origin'
+hudson.plugins.git.GitException: Failed to fetch from https://github.com/samarpit1111/devops_pipeline_demo
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM.fetchFrom(GitSCM.java:997)
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM.retrieveChanges(GitSCM.java:1239)
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM._checkout(GitSCM.java:1310)
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM.checkout(GitSCM.java:1277)
+	at hudson.scm.SCM.checkout(SCM.java:540)
+	at hudson.model.AbstractProject.checkout(AbstractProject.java:1250)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.defaultCheckout(AbstractBuild.java:649)
+	at jenkins.scm.SCMCheckoutStrategy.checkout(SCMCheckoutStrategy.java:85)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:522)
+	at hudson.model.Run.execute(Run.java:1831)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:44)
+	at hudson.model.ResourceController.execute(ResourceController.java:101)
+	at hudson.model.Executor.run(Executor.java:445)
+Caused by: hudson.plugins.git.GitException: Command "/usr/bin/git fetch --tags --force --progress -- https://github.com/samarpit1111/devops_pipeline_demo +refs/heads/*:refs/remotes/origin/*" returned status code 128:
+stdout: 
+stderr: remote: Enumerating objects: 2001, done.        
+Receiving objects:   0% (1/2001)
+Receiving objects:   1% (21/2001)
+Receiving objects:   2% (41/2001)
+Receiving objects:   2% (54/2001), 1.09 MiB | 1.08 MiB/s
+Receiving objects:   2% (54/2001), 1.75 MiB | 703.00 KiB/s
+Receiving objects:   2% (54/2001), 1.87 MiB | 627.00 KiB/s
+Receiving objects:   2% (54/2001), 1.94 MiB | 491.00 KiB/s
+Receiving objects:   2% (54/2001), 2.12 MiB | 391.00 KiB/s
+Receiving objects:   2% (54/2001), 2.20 MiB | 371.00 KiB/s
+Receiving objects:   2% (54/2001), 2.30 MiB | 287.00 KiB/s
+Receiving objects:   2% (54/2001), 2.49 MiB | 134.00 KiB/s
+Receiving objects:   2% (54/2001), 2.67 MiB | 125.00 KiB/s
+Receiving objects:   2% (54/2001), 2.79 MiB | 144.00 KiB/s
+Receiving objects:   2% (54/2001), 2.98 MiB | 159.00 KiB/s
+Receiving objects:   2% (54/2001), 3.10 MiB | 152.00 KiB/s
+Receiving objects:   2% (54/2001), 3.21 MiB | 155.00 KiB/s
+Receiving objects:   2% (54/2001), 3.39 MiB | 153.00 KiB/s
+Receiving objects:   2% (54/2001), 3.52 MiB | 156.00 KiB/s
+Receiving objects:   2% (54/2001), 3.64 MiB | 133.00 KiB/s
+Receiving objects:   2% (54/2001), 3.76 MiB | 132.00 KiB/s
+Receiving objects:   2% (55/2001), 3.94 MiB | 134.00 KiB/s
+Receiving objects:   2% (55/2001), 4.07 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 4.13 MiB | 125.00 KiB/s
+Receiving objects:   2% (55/2001), 4.25 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 4.39 MiB | 128.00 KiB/s
+Receiving objects:   2% (55/2001), 4.49 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 4.64 MiB | 131.00 KiB/s
+Receiving objects:   2% (55/2001), 4.73 MiB | 123.00 KiB/s
+Receiving objects:   2% (55/2001), 4.86 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 5.04 MiB | 119.00 KiB/s
+Receiving objects:   2% (55/2001), 5.10 MiB | 122.00 KiB/s
+Receiving objects:   2% (55/2001), 5.29 MiB | 125.00 KiB/s
+Receiving objects:   2% (55/2001), 5.40 MiB | 119.00 KiB/s
+Receiving objects:   2% (55/2001), 5.52 MiB | 134.00 KiB/s
+Receiving objects:   2% (55/2001), 5.58 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 5.71 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 5.83 MiB | 125.00 KiB/s
+Receiving objects:   2% (55/2001), 6.01 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 6.13 MiB | 123.00 KiB/s
+Receiving objects:   2% (55/2001), 6.19 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 6.32 MiB | 116.00 KiB/s
+Receiving objects:   2% (55/2001), 6.50 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 6.62 MiB | 128.00 KiB/s
+Receiving objects:   2% (55/2001), 6.81 MiB | 138.00 KiB/s
+Receiving objects:   2% (55/2001), 6.92 MiB | 136.00 KiB/s
+Receiving objects:   2% (55/2001), 7.06 MiB | 140.00 KiB/s
+Receiving objects:   2% (55/2001), 7.22 MiB | 138.00 KiB/s
+Receiving objects:   2% (55/2001), 7.33 MiB | 147.00 KiB/s
+Receiving objects:   2% (55/2001), 7.41 MiB | 134.00 KiB/s
+Receiving objects:   2% (55/2001), 7.53 MiB | 122.00 KiB/s
+Receiving objects:   2% (55/2001), 7.65 MiB | 125.00 KiB/s
+Receiving objects:   2% (55/2001), 7.82 MiB | 130.00 KiB/s
+Receiving objects:   2% (55/2001), 7.96 MiB | 136.00 KiB/s
+Receiving objects:   2% (55/2001), 8.14 MiB | 134.00 KiB/s
+Receiving objects:   2% (55/2001), 8.20 MiB | 133.00 KiB/s
+Receiving objects:   2% (55/2001), 8.32 MiB | 134.00 KiB/s
+Receiving objects:   2% (55/2001), 8.44 MiB | 133.00 KiB/s
+Receiving objects:   2% (55/2001), 8.56 MiB | 133.00 KiB/s
+Receiving objects:   2% (55/2001), 8.70 MiB | 135.00 KiB/s
+Receiving objects:   2% (55/2001), 8.80 MiB | 123.00 KiB/s
+Receiving objects:   2% (55/2001), 8.99 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 9.00 MiB | 117.00 KiB/s
+Receiving objects:   2% (55/2001), 9.17 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 9.29 MiB | 125.00 KiB/s
+Receiving objects:   2% (55/2001), 9.47 MiB | 121.00 KiB/s
+Receiving objects:   2% (55/2001), 9.59 MiB | 124.00 KiB/s
+Receiving objects:   2% (55/2001), 9.65 MiB | 123.00 KiB/s
+Receiving objects:   2% (55/2001), 9.78 MiB | 124.00 KiB/s
+Receiving objects:   3% (61/2001), 9.78 MiB | 124.00 KiB/s
+Receiving objects:   3% (74/2001), 9.89 MiB | 131.00 KiB/s
+Receiving objects:   4% (81/2001), 9.96 MiB | 124.00 KiB/s
+Receiving objects:   4% (99/2001), 9.96 MiB | 124.00 KiB/s
+Receiving objects:   5% (101/2001), 9.96 MiB | 124.00 KiB/s
+Receiving objects:   6% (121/2001), 10.09 MiB | 125.00 KiB/s
+Receiving objects:   6% (123/2001), 10.09 MiB | 125.00 KiB/s
+Receiving objects:   7% (141/2001), 10.20 MiB | 121.00 KiB/s
+Receiving objects:   7% (150/2001), 10.26 MiB | 125.00 KiB/s
+Receiving objects:   8% (161/2001), 10.26 MiB | 125.00 KiB/s
+Receiving objects:   9% (181/2001), 10.32 MiB | 125.00 KiB/s
+Receiving objects:  10% (201/2001), 10.32 MiB | 125.00 KiB/s
+Receiving objects:  10% (205/2001), 10.32 MiB | 125.00 KiB/s
+Receiving objects:  11% (221/2001), 10.32 MiB | 125.00 KiB/s
+Receiving objects:  12% (241/2001), 10.45 MiB | 126.00 KiB/s
+Receiving objects:  12% (255/2001), 10.50 MiB | 124.00 KiB/s
+Receiving objects:  13% (261/2001), 10.50 MiB | 124.00 KiB/s
+Receiving objects:  14% (281/2001), 10.50 MiB | 124.00 KiB/s
+Receiving objects:  15% (301/2001), 10.50 MiB | 124.00 KiB/s
+Receiving objects:  16% (321/2001), 10.63 MiB | 135.00 KiB/s
+Receiving objects:  16% (332/2001), 10.69 MiB | 135.00 KiB/s
+Receiving objects:  16% (337/2001), 10.75 MiB | 120.00 KiB/s
+Receiving objects:  16% (337/2001), 10.95 MiB | 138.00 KiB/s
+Receiving objects:  17% (341/2001), 10.99 MiB | 134.00 KiB/s
+Receiving objects:  17% (348/2001), 10.99 MiB | 134.00 KiB/s
+Receiving objects:  18% (361/2001), 10.99 MiB | 134.00 KiB/s
+Receiving objects:  18% (376/2001), 11.19 MiB | 136.00 KiB/s
+Receiving objects:  18% (376/2001), 11.26 MiB | 128.00 KiB/s
+Receiving objects:  18% (380/2001), 11.43 MiB | 125.00 KiB/s
+Receiving objects:  18% (380/2001), 11.54 MiB | 120.00 KiB/s
+Receiving objects:  18% (380/2001), 11.66 MiB | 121.00 KiB/s
+Receiving objects:  18% (380/2001), 11.84 MiB | 124.00 KiB/s
+Receiving objects:  18% (380/2001), 11.94 MiB | 129.00 KiB/s
+Receiving objects:  18% (380/2001), 12.08 MiB | 124.00 KiB/s
+Receiving objects:  18% (380/2001), 12.17 MiB | 126.00 KiB/s
+Receiving objects:  18% (380/2001), 12.29 MiB | 129.00 KiB/s
+Receiving objects:  19% (381/2001), 12.29 MiB | 129.00 KiB/s
+Receiving objects:  19% (398/2001), 12.39 MiB | 123.00 KiB/s
+Receiving objects:  19% (398/2001), 12.51 MiB | 123.00 KiB/s
+Receiving objects:  19% (398/2001), 12.63 MiB | 124.00 KiB/s
+Receiving objects:  19% (398/2001), 12.82 MiB | 119.00 KiB/s
+Receiving objects:  19% (398/2001), 12.89 MiB | 127.00 KiB/s
+Receiving objects:  19% (398/2001), 13.00 MiB | 121.00 KiB/s
+Receiving objects:  19% (398/2001), 13.11 MiB | 123.00 KiB/s
+Receiving objects:  19% (398/2001), 13.28 MiB | 130.00 KiB/s
+Receiving objects:  19% (398/2001), 13.36 MiB | 125.00 KiB/s
+Receiving objects:  19% (398/2001), 13.54 MiB | 125.00 KiB/s
+Receiving objects:  19% (398/2001), 13.61 MiB | 123.00 KiB/s
+Receiving objects:  19% (398/2001), 13.72 MiB | 121.00 KiB/s
+Receiving objects:  19% (398/2001), 13.85 MiB | 125.00 KiB/s
+Receiving objects:  19% (398/2001), 13.96 MiB | 123.00 KiB/s
+Receiving objects:  19% (398/2001), 14.09 MiB | 120.00 KiB/s
+Receiving objects:  20% (401/2001), 14.21 MiB | 135.00 KiB/s
+Receiving objects:  20% (403/2001), 14.30 MiB | 140.00 KiB/s
+Receiving objects:  20% (403/2001), 14.46 MiB | 136.00 KiB/s
+Receiving objects:  20% (403/2001), 14.51 MiB | 135.00 KiB/s
+error: RPC failed; curl 92 HTTP/2 stream 11 was not closed cleanly: CANCEL (err 8)
+error: 3741 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2848)
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandWithCredentials(CliGitAPIImpl.java:2184)
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl$1.execute(CliGitAPIImpl.java:635)
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM.fetchFrom(GitSCM.java:995)
+	... 12 more
+ERROR: Error fetching remote repo 'origin'
 Finished: FAILURE
