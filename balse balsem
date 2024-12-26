@@ -11,3 +11,13 @@ echo "**"
 echo "..... Test Phase Started :: Testing via Automated Scripts :: ........"
 cd ../integration-testing/
 mvn clean verify -P integration-test
+
+
+#!/bin/bash
+echo "................... Integration Phase Started :: Copying Artifacts .................."
+cd java_web_code/
+/bin/cp target/war/1.0/spring-boot-sample-1.0.0.war ../docker/
+echo "................... Provisioning Phase Started :: Building Docker Container .................."
+cd ../docker/
+
+sudo docker build -t devops_pipeline_demo .
