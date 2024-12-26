@@ -1,2 +1,13 @@
-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
-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
+
+#!/bin/bash
+echo "***************** Starting CI CD Pipeline Tasks *****************"
+
+echo "**"
+echo ".... Build Phase Started :: Compiling Source Code :: ........"
+cd java-web-code
+mvn install
+
+echo "**"
+echo "..... Test Phase Started :: Testing via Automated Scripts :: ........"
+cd ../integration-testing/
+mvn clean verify -P integration-test
